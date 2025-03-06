@@ -105,7 +105,7 @@ document.getElementById('fileUpload').addEventListener('change', function(event)
             if (typeof fileNameA3 === 'string' && fileNameA3.startsWith('As of ')) {
                 fileNameA3 = fileNameA3.substring(6).trim();
             }
-            const fileName = `${fileNameA1} - ${fileNameA3}`.trim() || 'modified';
+            const fileName = `${fileNameA1} - Full Reporting - ${fileNameA3}`.trim() || 'modified';
 
             // Output the modified content to the console
             const buffer = await workbook.xlsx.writeBuffer();
