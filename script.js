@@ -37,9 +37,9 @@ document.getElementById('fileUpload').addEventListener('change', function(event)
             };
 
             // Unmerge cells in Rows 1, 2, and 3 if they are merged from A to D
-            unmergeCells('A1:D1');
-            unmergeCells('A2:D2');
-            unmergeCells('A3:D3');
+            unmergeCells('A1:I1');
+            unmergeCells('A2:I2');
+            unmergeCells('A3:I3');
 
             // Merge cells in Rows 1, 2, and 3 from A to I
             worksheet.mergeCells('A1:I1');
@@ -47,8 +47,8 @@ document.getElementById('fileUpload').addEventListener('change', function(event)
             worksheet.mergeCells('A3:I3');
 
             // Merge cells in Rows 5, from B to E, and from F to I
-            worksheet.mergeCells('B5:E5');
-            worksheet.mergeCells('F5:I5');
+            // worksheet.mergeCells('B5:E5');
+            // worksheet.mergeCells('F5:I5');
 
             // Center align the merged cells in Rows 1, 2, and 3
             worksheet.getCell('A1').alignment = { horizontal: 'center', vertical: 'middle' };
