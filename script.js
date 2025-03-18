@@ -29,26 +29,103 @@ document.getElementById('fileUpload').addEventListener('change', function(event)
             // Delete rows 4, 5, and 6
             worksheet.spliceRows(4, 3);
 
-            // Define the unmergeCells function
-            const unmergeCells = (range) => {
-                if (worksheet.getCell(range.split(':')[0]).isMerged) {
-                    worksheet.unMergeCells(range);
-                }
-            };
+            // // Define the unmergeCells function
+            // const unmergeCells = (range) => {
+            //     if (worksheet.getCell(range.split(':')[0]).isMerged) {
+            //         worksheet.unMergeCells(range);
+            //     }
+            // };
 
             // Unmerge cells in Rows 1, 2, and 3 if they are merged from A to D
-            unmergeCells('A1:I1');
-            unmergeCells('A2:I2');
-            unmergeCells('A3:I3');
+            // unmergeCells('A1:I1');
+            // unmergeCells('A2:I2');
+            // unmergeCells('A3:I3');
 
             // Merge cells in Rows 1, 2, and 3 from A to I
-            worksheet.mergeCells('A1:I1');
-            worksheet.mergeCells('A2:I2');
-            worksheet.mergeCells('A3:I3');
+            // worksheet.mergeCells('A1:I1');
+            // worksheet.mergeCells('A2:I2');
+            // worksheet.mergeCells('A3:I3');
+
+            // // Track already unmerged ranges
+            // const unmergedRanges = new Set(); 
+
+            // // Unmerge all merged cells in Row 5
+            // for (let col = 1; col <= 9; col++) {
+            //     const cell = worksheet.getCell(5, col);
+                
+            //     if (cell.isMerged) {
+            //         const mergeRange = cell.master.address; // Get the merged range
+
+            //         // Unmerge only if we haven't done so for this range
+            //         if (!unmergedRanges.has(mergeRange)) {
+            //             console.log(`Unmerging cells in range: ${mergeRange}`);
+            //             worksheet.unMergeCells(mergeRange);
+            //             unmergedRanges.add(mergeRange); // Store the range to prevent duplicate unmerge
+            //         }
+            //     }
+            // }
+
+            // Now, safely merge B5:E5
+            // try {
+            //     worksheet.mergeCells('B5:E5');
+            //     console.log("Successfully merged B5:E5");
+            // } catch (error) {
+            //     console.error("Error merging B5:E5:", error);
+            // }
+            
 
             // Merge cells in Rows 5, from B to E, and from F to I
-            // worksheet.mergeCells('B5:E5');
-            // worksheet.mergeCells('F5:I5');
+            // unmergeCells('B5:I5');
+            // worksheet.mergeCells('B6:E6');
+            // worksheet.mergeCells('F6:I6');
+
+            function formatDate(dateStr) {
+                let parts = dateStr.split(' ');e
+                if (parts.length !== 3) return 'Invalid Date'; 
+                let month = parts[0];
+                let day = parts[1].replace(',', ''); 
+                let year = parts[2];
+                let monthNumber;
+                switch (month) {
+                    case 'January': monthNumber = 1; break;
+                    case 'February': monthNumber = 2; break;
+                    case 'March': monthNumber = 3; break;
+                    case 'April': monthNumber = 4; break;
+                    case 'May': monthNumber = 5; break;
+                    case 'June': monthNumber = 6; break;
+                    case 'July': monthNumber = 7; break;
+                    case 'August': monthNumber = 8; break;
+                    case 'September': monthNumber = 9; break;
+                    case 'October': monthNumber = 10; break;
+                    case 'November': monthNumber = 11; break;
+                    case 'December': monthNumber = 12; break;
+                    default: return 'Invalid Month';
+                }
+                return `${monthNumber}/${day}/${year}`;
+            }
+
+            cellValue = worksheet.getCell('A3').value;
+            date = cellValue.substring(6).trim();
+
+            proper_date = formatDate(date);
+
+            worksheet.getCell('B5').value = "                                                      Month Ending";
+            worksheet.getCell('C5').value = null;
+            worksheet.getCell('D5').value = null;
+            worksheet.getCell('E5').value = null;
+            worksheet.getCell('F5').value = "                                                      Period Ending";
+            worksheet.getCell('G5').value = null;
+            worksheet.getCell('H5').value = null;
+            worksheet.getCell('I5').value = null;
+
+            worksheet.getCell('B6').value = `                                                      ${proper_date}`;
+            worksheet.getCell('C6').value = null;
+            worksheet.getCell('D6').value = null;
+            worksheet.getCell('E6').value = null;
+            worksheet.getCell('F6').value = `                                                      ${proper_date}`;
+            worksheet.getCell('G6').value = null;
+            worksheet.getCell('H6').value = null;
+            worksheet.getCell('I6').value = null;
 
             // Center align the merged cells in Rows 1, 2, and 3
             worksheet.getCell('A1').alignment = { horizontal: 'center', vertical: 'middle' };
