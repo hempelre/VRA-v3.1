@@ -25,4 +25,5 @@ Please note: You will have to autofit row height within excel.
 CTRL + A  
 ALT + H + O + A  
 This will autofit all rows, or feel free to use a shortcut.  
-Code will only work with a month ending and a period ending columns.
+Code will only work with a month ending and a period ending columns.  
+Program will not start if the uploaded document is currently opened.
