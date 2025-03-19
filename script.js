@@ -109,20 +109,20 @@ document.getElementById('fileUpload').addEventListener('change', function(event)
 
             proper_date = formatDate(date);
 
-            worksheet.getCell('B5').value = "                                                      Month Ending";
+            worksheet.getCell('B5').value = "                                                          Month Ending";
             worksheet.getCell('C5').value = null;
             worksheet.getCell('D5').value = null;
             worksheet.getCell('E5').value = null;
-            worksheet.getCell('F5').value = "                                                      Period Ending";
+            worksheet.getCell('F5').value = "                                                          Period Ending";
             worksheet.getCell('G5').value = null;
             worksheet.getCell('H5').value = null;
             worksheet.getCell('I5').value = null;
 
-            worksheet.getCell('B6').value = `                                                      ${proper_date}`;
+            worksheet.getCell('B6').value = `                                                          ${proper_date}`;
             worksheet.getCell('C6').value = null;
             worksheet.getCell('D6').value = null;
             worksheet.getCell('E6').value = null;
-            worksheet.getCell('F6').value = `                                                      ${proper_date}`;
+            worksheet.getCell('F6').value = `                                                          ${proper_date}`;
             worksheet.getCell('G6').value = null;
             worksheet.getCell('H6').value = null;
             worksheet.getCell('I6').value = null;

@@ -1,4 +1,4 @@
-Variance Report Automator version 3.0  
+Variance Report Automator --version 3.1.1  
 The VRA is designed to automate and configure a variance report at the top level for the accounting team at Hempel Companies.  
 To use, navigate to hempel-ai.com  
 It functions as follows:  
